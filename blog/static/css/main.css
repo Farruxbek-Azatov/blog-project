@@ -1,0 +1,43 @@
+.content {
+    width: 80%;
+}
+.side {
+    width: 20%;
+}
+
+.title {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+.section {
+    display: flex;
+}
+
+.footer{
+    background-color: black;
+}
+
+.footer_links > a{
+    display: block;
+    text-decoration: none;
+}
+
+#footer_hr {
+    background-color: black;
+    width: 80%;
+    margin: 10px auto;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top:5px dotted blue;
+}
+#footer_icons {
+    /* width: 50%;
+    margin: 0 auto; */
+    text-align: center;
+}
+#footer_icons a i {
+    color: #fff;
+    margin: 0 10px;
+}

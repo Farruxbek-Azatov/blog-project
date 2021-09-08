@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset(PublishedManager, self).\
+        return super().get_queryset().\
             filter(status='published')
 
 
