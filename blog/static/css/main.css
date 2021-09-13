@@ -1,3 +1,4 @@
+
 :root {
     --footer-height: 200px;
 }
@@ -7,6 +8,10 @@ body {
 }
 #main-container {
     min-height: calc(100% - var(--footer-height));
+}
+.blog-logo {
+    width: 200px;
+    height: 100px;
 }
 .logo {
     display: inline-block;
@@ -22,18 +27,35 @@ body {
     color: blue;
     font-weight: bold;
 }
+.navbar_links a {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 5px 18px;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0, 255, 221, 0.884);
+}
+.navbar_links a:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 255, 221, 0.884),
+                0 0 20px rgba(0, 255, 221, 0.884),
+                0 0 40px rgba(0, 255, 221, 0.884);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
 .content {
     padding: 30px;
 }
-/* .side {
-    background-color: red;
-} */
+
 .section {
     display: grid;
     grid-template-columns: 4fr 1fr;
     width: 85%;
     margin: 0 auto;
-    margin-top: 20px;
 }
 /* Saytning postlar joylashadigan qismi  */
 .post {
@@ -41,7 +63,6 @@ body {
     margin: 0 auto;
     text-align: justify;
     color: darkslategray;
-    font-weight: 600;
 }
 .post::after {
     content: "";
@@ -56,6 +77,7 @@ body {
 }
 .title {
     margin-bottom: -13px;
+    font-family: cursive;
 }
 .title a {
     text-decoration: none;
@@ -140,11 +162,9 @@ body {
 .btn-read:hover {
 	transition-delay: 1.5s;
 	color: #000;
-	box-shadow: 0 0 5px rgba(0, 255, 0, 0.3),
+	box-shadow: 0 0 5px rgba(0, 255, 0, 0.2),
 				0 0 10px rgba(0, 255, 0, 0.4),
-				0 0 20px rgba(0, 255, 0, 0.5),
-				0 0 40px rgba(0, 255, 0, 0.6),
-				0 0 80px rgba(0, 255, 0, 0.7);
+				0 0 40px rgba(0, 255, 0, 0.5);
 }
 .btn-read span {
 	position: relative;
@@ -196,4 +216,65 @@ body {
 				-5px 0 #0f0;
 	transition-delay: 0s, 0.5s, 1s, 1s;
 
+}
+
+
+/* Right side of site */
+.list-box{
+	border-bottom: 20px solid #03a9f4;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.list-box h3 {
+	color: #fff;
+	background: #03a9f4;
+	padding: 10px 20px;
+    margin-bottom: 0;
+	font-size: 20px;
+	font-weight: 700;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.list-box div a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+	padding: 10px;
+    width: 100%;
+	background: #fff;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	transition: transform 0.5s;
+}
+.list-box div a:hover {
+	transform: scale(1.1);
+	z-index: 10;
+	background: #25bcff;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+	color: #fff;
+}
+
+.list-box div a span {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	background: #25bcff;
+	color: #fff;
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 10px;
+	font-size: 12px;
+	font-weight: 600;
+	transform: translateY(-2px);
+}
+.list-box div a:hover span {
+	background: #fff;
+	color: #25bcff;
+}
+
+.search-form {
+    position: absolute;
+    top: 6.5rem;
+    right: 5rem;
 }

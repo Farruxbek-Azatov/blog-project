@@ -22,59 +22,49 @@
     <body>
         <div id="main-container">
             <div class="header">
-                <div>
-                    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">MyBlog</a>
-                            <button
-                                class="navbar-toggler"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent"
-                                aria-expanded="false"
-                                aria-label="Toggle navigation"
-                            >
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div
-                                class="collapse navbar-collapse"
-                                id="navbarSupportedContent"
-                            >
-                                <form class="d-flex">
-                                    <input
-                                        class="form-control me-2"
-                                        type="search"
-                                        placeholder="Search"
-                                        aria-label="Search"
-                                    />
-                                    <button
-                                        class="btn btn-outline-success"
-                                        type="submit"
-                                    >
-                                        Search
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                    <img src="{% static 'images/blogLogo.jpg' %}" class="blog-logo" / >
+                    <div class="navbar_links">
+                        <a href="#">Home</a>
+                        <a href="#">Menu</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <form class="search-form d-flex">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        <button
+                            class="btn btn-outline-success"
+                            type="submit"
+                        >
+                            Search
+                        </button>
+                    </form>
             </div>
 
             <div class="section">
-                {% comment %} <div>
-                    <h2>
-                        List Item Hover Effects
-                    </h2>
-                    <ul>
-                        <li><span>1</span>List Item One</li>
-                        <li><span>2</span>List Item Two</li>
-                        <li><span>3</span>List Item Three</li>
-                        <li><span>4</span>List Item Four</li>
-                        <li><span>5</span>List Item Five</li>
-                        <li><span>6</span>List Item Six</li>
-                    </ul>
-                </div> {% endcomment %}
+                <div class="content">
+                    {% block content%}
+                    {% endblock content%}
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="list-box">
+                        <h3>
+                            Most popular posts
+                        </h3>
+                        <div>
+                            <a href="#"><span>1</span>List Item One</a>
+                            <a href="#"><span>2</span>List Item Two</a>
+                            <a href="#"><span>3</span>List Item Three</a>
+                            <a href="#"><span>4</span>List Item Four</a>
+                            <a href="#"><span>5</span>List Item Five</a>
+                            <a href="#"><span>6</span>List Item Six</a>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
 
