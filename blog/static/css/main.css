@@ -8,6 +8,7 @@ body {
 #main-container {
     min-height: calc(100% - var(--footer-height));
 }
+
 .content {
     width: 80%;
     padding: 30px;
@@ -62,6 +63,7 @@ body {
     nav form {
         margin-top: 10px;
     }
+
     .content {
         width: 70%;
     }
