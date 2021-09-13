@@ -14,32 +14,34 @@
 </head>
 
 <body>
-    <div class="header">
-        <nav class="navbar navbar-light bg-info">
-            <div class="container-fluid">
-                <a class="navbar-brand">MyBlog</a>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
-
-    <div class="section container-fluid">
-        <div class="content">
-            {% block content %}
-            {% endblock content %}
+    <div id="main_body">
+        <div class="header">
+            <nav class="navbar navbar-light bg-info">
+                <div class="container-fluid">
+                    <a class="navbar-brand">MyBlog</a>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
         </div>
 
-        <div class="side position-sticky top-0">
-            <ul class="list-group">
-                <li class="list-group-item bg-success">Home</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">About</li>
-            </ul>
+        <div class="section container-fluid">
+            <div class="content">
+                {% block content %}
+                {% endblock content %}
+            </div>
+
+            <div class="side position-sticky top-0">
+                <ul class="list-group">
+                    <li class="list-group-item bg-success">Home</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">About</li>
+                </ul>
+            </div>
         </div>
     </div>
 

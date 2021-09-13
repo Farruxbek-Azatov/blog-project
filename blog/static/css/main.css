@@ -1,3 +1,15 @@
+:root {
+    --footer-height: 200px;
+}
+
+html, body {
+    height: 100%;
+}
+
+#main_body {
+    min-height: calc(100% - var(--footer-height));
+}
+
 .content {
     width: 80%;
 }
@@ -16,6 +28,7 @@
 
 .footer{
     background-color: black;
+    height: var(--footer-height);
 }
 
 .footer_links > a{
@@ -33,11 +46,19 @@
     border-top:5px dotted blue;
 }
 #footer_icons {
-    /* width: 50%;
-    margin: 0 auto; */
     text-align: center;
 }
 #footer_icons a i {
     color: #fff;
     margin: 0 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        width: 70%;
+    }
+    .side {
+        width: 30%;
+    }
+
 }
