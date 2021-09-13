@@ -1,43 +1,79 @@
+:root {
+    --footer-height: 200px;
+}
+html,
+body {
+    height: 100%;
+}
+#main-container {
+    min-height: calc(100% - var(--footer-height));
+}
 .content {
     width: 80%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
 }
 .side {
     width: 20%;
 }
-
+.section {
+    display: flex;
+}
+/* Saytning postlar joylashadigan qismi  */
+.post {
+    border: 1px solid #000;
+    width: 90%;
+    margin: 0 auto;
+}
 .title {
     text-decoration: none;
     color: darkcyan;
 }
 
-.section {
-    display: flex;
+.footer {
+    height: var(--footer-height);
+    background-color: rgb(50, 172, 50);
 }
 
-.footer{
-    background-color: black;
-}
-
-.footer_links > a{
+.footer_links > a {
     display: block;
     text-decoration: none;
 }
 
 #footer_hr {
-    background-color: black;
+    background-color: inherit;
     width: 80%;
     margin: 10px auto;
     border-bottom: none;
     border-left: none;
     border-right: none;
-    border-top:5px dotted blue;
+    border-top: 5px dotted blue;
 }
 #footer_icons {
-    /* width: 50%;
-    margin: 0 auto; */
     text-align: center;
 }
 #footer_icons a i {
     color: #fff;
     margin: 0 10px;
+}
+@media screen and (max-width: 600px) {
+    nav form {
+        margin-top: 10px;
+    }
+    .content {
+        width: 70%;
+    }
+    .side {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .content {
+        width: 60%;
+    }
+    .side {
+        width: 40%;
+    }
 }
