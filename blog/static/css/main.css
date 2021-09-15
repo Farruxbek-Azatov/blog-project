@@ -2,6 +2,7 @@
 :root {
     --footer-height: 200px;
 }
+
 html,
 body {
     height: 100%;
@@ -47,16 +48,28 @@ body {
     width: 90%;
     margin: 0 auto;
 }
-.content {
-    padding: 30px;
-}
-
 .section {
     display: grid;
     grid-template-columns: 4fr 1fr;
+    align-items: center;
     width: 85%;
     margin: 0 auto;
 }
+.content {
+    padding: 30px;
+}
+.side {
+    position: relative;
+}
+.left-open-btn {
+    display: none;
+}
+.left-open-btn:hover {
+    box-shadow: 0 0 2px cyan, 0 0 18px darkcyan, 
+                inset 0 0 50px darkseagreen
+    ;
+}
+
 /* Saytning postlar joylashadigan qismi  */
 .post {
     width: 90%;
@@ -93,6 +106,7 @@ body {
     color: turquoise;
 }
 .footer {
+    clear: both;
     height: var(--footer-height);
     background-color: darkturquoise;
 }
@@ -125,156 +139,243 @@ body {
 #footer_icons a i:hover {
     transform: rotate(360deg) scale(1.5);
 }
-@media screen and (max-width: 600px) {
-    nav form {
-        margin-top: 10px;
-    }
-
-    .content {
-        width: 70%;
-    }
-    .side {
-        width: 30%;
-    }
-}
-@media screen and (max-width: 400px) {
-    .content {
-        width: 60%;
-    }
-    .side {
-        width: 40%;
-    }
-}
 
 /* Read More tugmachalariga ishlov berish */
 .btn-read {
     float: right;
     text-decoration: none;
     position: relative;
-	/* display: inline-block; */
-	padding: 4px 8px;
-	border: 1px solid #0f0;
-	font-weight: 600;
-	transition: 0.5s;
+    /* display: inline-block; */
+    padding: 4px 8px;
+    border: 1px solid #0f0;
+    font-weight: 600;
+    transition: 0.5s;
     color: darkcyan;
 }
 
 .btn-read:hover {
-	transition-delay: 1.5s;
-	color: #000;
-	box-shadow: 0 0 5px rgba(0, 255, 0, 0.2),
-				0 0 10px rgba(0, 255, 0, 0.4),
-				0 0 40px rgba(0, 255, 0, 0.5);
+    transition-delay: 1.5s;
+    color: #000;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2),
+                0 0 10px rgba(0, 255, 0, 0.4),
+                0 0 40px rgba(0, 255, 0, 0.5);
 }
 .btn-read span {
-	position: relative;
-	z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 .btn-read:before {
-	content: "";
-	position: absolute;
-	left: -10px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 10px;
-	height: 2px;
-	background-color: #0f0;
-	box-shadow: 5px -8px #0f0, 
-				5px 8px #0f0;
-	transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
-	transition-delay: 1s, 0.5s, 0s, 0s;
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 2px;
+    background-color: #0f0;
+    box-shadow: 5px -8px #0f0, 
+                5px 8px #0f0;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
 }
 .btn-read:hover:before {
-	width: 60%;
-	height: 100%;
-	left: -2px;
-	box-shadow: 5px 0 #0f0,
-				5px 0 #0f0;
-	transition-delay: 0s, 0.5s, 1s, 1s;
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    box-shadow: 5px 0 #0f0,
+                5px 0 #0f0;
+    transition-delay: 0s, 0.5s, 1s, 1s;
 
 }
 
 .btn-read:after {
-	content: "";
-	position: absolute;
-	right: -10px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 10px;
-	height: 2px;
-	background-color: #0f0;
-	box-shadow: -5px -8px #0f0, 
-				-5px 8px #0f0;
-	transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
-	transition-delay: 1s, 0.5s, 0s, 0s;
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 2px;
+    background-color: #0f0;
+    box-shadow: -5px -8px #0f0, 
+                -5px 8px #0f0;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
 }
 .btn-read:hover:after {
-	width: 60%;
-	height: 100%;
-	right: -2px;
-	box-shadow: -5px 0 #0f0,
-				-5px 0 #0f0;
-	transition-delay: 0s, 0.5s, 1s, 1s;
+    width: 60%;
+    height: 100%;
+    right: -2px;
+    box-shadow: -5px 0 #0f0,
+                -5px 0 #0f0;
+    transition-delay: 0s, 0.5s, 1s, 1s;
 
 }
 
 
 /* Right side of site */
 .list-box{
-	border-bottom: 20px solid #03a9f4;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+    border-bottom: 20px solid #03a9f4;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .list-box h3 {
-	color: #fff;
-	background: #03a9f4;
-	padding: 10px 20px;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
     margin-bottom: 0;
-	font-size: 20px;
-	font-weight: 700;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .list-box div a {
     text-decoration: none;
     color: #000;
     display: block;
-	padding: 10px;
+    padding: 10px;
     width: 100%;
-	background: #fff;
-	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-	transition: transform 0.5s;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
 }
 .list-box div a:hover {
-	transform: scale(1.1);
-	z-index: 10;
-	background: #25bcff;
-	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-	color: #fff;
+    transform: scale(1.1);
+    z-index: 10;
+    background: #25bcff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
 .list-box div a span {
-	width: 20px;
-	height: 20px;
-	text-align: center;
-	line-height: 20px;
-	background: #25bcff;
-	color: #fff;
-	display: inline-block;
-	border-radius: 50%;
-	margin-right: 10px;
-	font-size: 12px;
-	font-weight: 600;
-	transform: translateY(-2px);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #25bcff;
+    color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    transform: translateY(-2px);
 }
 .list-box div a:hover span {
-	background: #fff;
-	color: #25bcff;
+    background: #fff;
+    color: #25bcff;
 }
 
 .search-form {
-    position: absolute;
-    top: 6.5rem;
-    right: 5rem;
+    margin: 30px auto;
 }
+
+@media screen and (max-width: 1008px) {
+
+    .section {
+        display: block;
+        width: 100%;
+    }
+    .side {
+        position: fixed;
+        right: 0;
+        top: 15%;
+        bottom: 30%;
+        z-index: 1;
+    }
+    .content {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .left-open-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 30%;
+        bottom: 30%;
+        left: 0;
+        width: 30px;
+        background-color: darkcyan;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        transform: translateX(-100%);
+    }
+    .list-box {
+        max-height: 350px;
+        border-bottom-right-radius: 0;
+        overflow: hidden;
+        transition: all 1s;
+        width: 0;
+    }
+    .list-box h3 {
+        max-height: 40px;
+        border-top-right-radius: 0;
+    }
+}
+@media screen and (max-width: 750px) {
+    .navbar_links a {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+    .blog-logo {
+        width: 100px;
+        height: 50px;
+    }
+    .footer_links a {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+    #footer_hr {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .post p, .pub-date, .btn-read {
+        font-size: 0.8rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    :root {
+        --footer-height: 150px;
+    }
+    .navbar_links a {
+        font-size: 1rem;
+        padding: 1px;
+    }
+    .blog-logo {
+        width: 80px;
+        height: 30px;
+    }
+    .footer_links a {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+
+    .post p, .pub-date, .btn-read {
+        font-size: 0.5rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    #footer_icons a i {
+        margin: 15px 10px 5px 10px;
+    }
+    #footer_icons a i:hover {
+        transform: rotate(360deg) scale(1.3);
+    }
+}
+
